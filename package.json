@@ -3,20 +3,25 @@
   "version": "2.0.0",
   "description": "Interactive Kiosk for City Garage",
   "private": true,
-  "workspaces": ["client", "server"],
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "dev": "concurrently -n server,client -c blue,green \"npm:dev -w server\" \"npm:dev -w client\"",
     "build": "npm run build -w client && npm run build -w server",
     "start": "node server/dist/index.js",
     "test": "npm run test -w client && npm run test -w server",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx,scss,json,md}\""
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "concurrently": "^9.1.0",
     "eslint": "^9.15.0",
-    "typescript-eslint": "^8.15.0",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "prettier": "^3.4.0"
+    "prettier": "^3.4.0",
+    "typescript-eslint": "^8.15.0"
   }
 }
