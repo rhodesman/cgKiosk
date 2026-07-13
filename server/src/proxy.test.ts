@@ -36,5 +36,6 @@ describe("proxyJson", () => {
     const res = mockRes();
     await proxyJson(res as never, "https://x.test");
     expect(res.statusCode).toBe(502);
+    expect(res.body).toMatchObject({ error: expect.any(String) });
   });
 });

@@ -10,6 +10,6 @@ export async function proxyJson(res: Response, url: string): Promise<void> {
     const data = await upstream.json();
     res.json(data);
   } catch (err) {
-    res.status(502).json({ error: `Upstream request failed: ${(err as Error).message}` });
+    res.status(502).json({ error: `Upstream request failed: ${err instanceof Error ? err.message : String(err)}` });
   }
 }
