@@ -1,0 +1,30 @@
+{
+  "name": "citygaragekiosk",
+  "version": "1.0.0",
+  "description": "Interactive Kiosk for City Garage ",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "serve": "browser-refresh app.js",
+    "test": "node --inspect app.js"
+  },
+  "author": "Jason Rhodes (WebbMason)",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.0",
+    "http-proxy": "^1.18.0",
+    "jquery": "^3.4.1",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "node-libcurl": "^3.0.0",
+    "nodemon": "^3.0.3",
+    "popper.js": "^1.16.0",
+    "reload": "^3.0.3",
+    "unirest": "^0.6.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

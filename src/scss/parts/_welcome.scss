@@ -1,0 +1,8 @@
+#welcome {
+  h1 {
+    font-size: $pt100;
+  }
+  .logo {
+    @extend .offset-md-1;
+  }
+}

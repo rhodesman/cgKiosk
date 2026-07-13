@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no" name="viewport">
+    <meta name="HandheldFriendly" content="true" />
+    <title>City Garage Kiosk</title>
+
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/fw/bootscss">
+    <link rel="stylesheet" href="/dist/main.css">
+
+</head>
+<body id="cgKiosk">
+  <div class="container-fluid">
+    <header class="row no-gutters">
+      <section id="welcome" class="col-5">
+        <h1>Welcome to</h1>
+        <img class="logo" src="/img/logos/cg_logo-1.svg">
+      </section>
+      <section id="weather" class="offset-md-1 col-3">
+        <dl>
+          <dt class="today">Today</dt>
+          <dd class="today forcast"><i class="cloudy"></i><span>72 &deg;F</span></dd>
+          <dt class="tomorrow">Tomorrow</dt>
+          <dd class="tomorrow forcast"><i class="sunny"></i><span>55 &deg;F</span></dd>
+          <dt class="weekend">Weekend</dt>
+          <dd class="weekend forcast"><i class=""></i><span></span></dd>
+        </dl>
+      </section>
+      <section id="traffic" class="col-3">
+        <h2>Travel Information</h2>
+        <div class="list">
+          <ul>
+
+          </ul>
+        </div>
+
+      </section>
+    </header>
+    <div class="row main-body">
+      <section id="events" class="col">
+        <h2>Event Schedule</h2>
+        <div class="list">
+          <ul>
+
+          </ul>
+        </div>
+      </section>
+      <section id="map" class="col">
+
+        <!--<object data="map.html" class="garage-map"></object>-->
+          <div id="cgMap">
+            <div class="city-garage">
+              <div class="are-here">You Are Here</div>
+              <div class="suite s-200"></div>
+              <div class="suite s-300"></div>
+              <div class="suite s-400"></div>
+              <div class="suite s-500"></div>
+              <div class="suite s-600"></div>
+              <div class="suite s-700"></div>
+              <div class="suite s-800"></div>
+              <div class="suite s-900"></div>
+              <div class="suite s-900 a"></div>
+              <div class="suite s-1000"></div>
+              <div class="suite o-101"></div>
+              <div class="suite o-102"></div>
+              <div class="suite o-103"></div>
+              <div class="suite o-104"></div>
+              <div class="suite o-105"></div>
+              <div class="suite o-106"></div>
+              <div class="suite o-107"></div>
+              <div class="conf classroom"></div>
+              <div class="conf event"></div>
+              <div class="conf kitchen"></div>
+              <div class="conf c-102"></div>
+              <div class="kitchen"></div>
+              <div class="restrooms r-1"></div>
+              <div class="restrooms r-2"></div>
+            </div>
+          </div>
+
+      </section>
+
+      <section id="directory" class="col">
+        <h2>Company Directory</h2>
+        <div class="list">
+          <ul>
+            <li>
+              <div class="logo"></div>
+              <div class="location">
+                <span class="type">Suite</span>
+                <span class="num">100</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+      <section class="modal fade alerts" id="alertDetails" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col details">
+                    <h3>roadName</h3>
+                    <p>fullDesc</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  </div>
+    <script src="/fw/jquery"></script>
+    <script src="/fw/popper" ></script>
+    <script src="/fw/bootsjs"></script>
+    <script src="/dist/main-min.js"></script>
+    <script src="/fw/refresh"></script>
+</body>
+</html>

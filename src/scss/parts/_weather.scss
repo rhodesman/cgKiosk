@@ -1,0 +1,48 @@
+#weather {
+  dl {
+    dt, dd {
+      display: inline-block;
+      width: 49%;
+      font-size: $px72;
+      color:$white1;
+      margin-bottom: $px28;
+    }
+    dt {
+      text-align: right;
+    }
+    dd {
+      position: relative;
+      i {
+        @extend .fal;
+        min-width: 12.5rem;
+        text-align: right;
+        font-size: $px110;
+        padding-left: $px32;
+        padding-right: $px32;
+        /*&.cloud-cover- {
+          &0 {@extend .fa-sun;}
+          &1 {@extend .fa-clouds-sun;}
+          &2 {@extend .fa-clouds;}
+        }*/
+        &.precip- {
+          &500 {@extend .fa-cloud-drizzle;}
+          &501 {@extend .fa-cloud-showers;}
+          &502, &503 {@extend .fa-cloud-showers-heavy;}
+          &800 {@extend .fa-sun;}
+          &801, &802 {@extend .fa-clouds-sun;}
+          &803, &804 {@extend .fa-clouds;}
+          &600, &601, &602 {@extend .fa-cloud-snow;}
+          &611, &612m &613 {@extend .fa-cloud-sleet; }
+        }
+        &.rain { @extend .fa-cloud-showers; }
+        &.heavy-rain { @extend .fa-cloud-showers-heavy; }
+        &.snow { @extend .fa-cloud-snow; }
+        &.sleet { @extend .fa-cloud-sleet; }
+      }
+      span {
+        bottom: -1.5rem;
+        position: absolute;
+      }
+    }
+  }
+}

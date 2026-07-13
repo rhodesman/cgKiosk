@@ -1,0 +1,68 @@
+.modal-dialog {
+  top:50%;
+  transform: translateY(-50%) !important;
+  max-width: 50%;
+
+}
+#alertDetails {
+  .modal-header {
+    border-bottom: none;
+    .close {
+      font-size: $px90;
+      color:$white1;
+      margin: -1rem 0.5rem -1rem auto;
+    }
+  }
+  .modal-content {
+    border-radius:$px16;
+    background: linear-gradient(135deg, rgba($black1,1) 0%, rgba($black2,1) 100%);
+    //background: radial-gradient(circle, rgba($black1,1) 0%, rgba($black2,1) 100%);
+    @extend .boxShadow;
+  }
+  .modal-body {
+    max-height: 1900px;
+    scrollbar-width: none;
+    overflow: auto;
+    margin-bottom: 1rem;
+    h3 {
+      font-size: $px90;
+      i {
+        @extend .fal;
+        margin-right: $px38;
+      }
+      &.type- {
+        &0 i { @extend .fa-shipping-fast; }
+        &1 i { @extend .fa-construction; }
+        &2 i { @extend .fa-traffic-cone; }
+        &3 i { @extend .fa-cars; }
+        &4 i { @extend .fa-car-crash; }
+      }
+      &.severity- {
+        &0 i{ color: $green1; }
+        &1 i { color: $white1; }
+        &2 i { color: $orange1; }
+        &3 i { color: $red1; }
+        &4 i { color: $red1; animation: flashing 2s linear infinite; }
+      }
+    }
+    .time- {
+      &start {
+
+      }
+      &end {
+        margin-left: 2rem;
+      }
+    }
+    p, div {
+      padding: 0 3rem 3rem;
+      &, *:not(h3):not(i) {
+        @extend .secondFont;
+        color:$white1 !important;
+        font-size: $px48;
+      }
+      strong span {
+        color:$green1 !important;
+      }
+    }
+  }
+}

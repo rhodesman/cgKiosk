@@ -1,0 +1,64 @@
+
+
+#events {
+  overflow: hidden;
+  h2 {
+    &:before {
+      @extend .fa-calendar-alt;
+    }
+  }
+  .list {
+
+    li {
+      display: flex;
+      position: relative;
+      align-items:center;
+      padding-right: $arrowSize;
+      margin-bottom: 1.5rem;
+      &:after {
+        content: "\f054";
+        @extend .fas;
+        font-size: $px72;
+        text-align: right;
+        position: absolute;
+        right:$padSize;
+        top:50%;
+        transform: translateY(-50%);
+        opacity: 0.5;
+      }
+    }
+    .date {
+      display: inline-block;
+      min-width: 22%;
+
+      padding-right: $padSize;
+      span {
+        position: relative;
+        @extend .mainFont;
+        font-size: $px56;
+        display: block;
+        text-align: center;
+        + span {
+          font-size: $px40;
+          &:before {
+            content:'';
+            position: absolute;
+            top:0 - ($dashSize / 2);
+            left:50%;
+            transform: translateX(-50%);
+            width:$dashSize * 2;
+            text-align: center;
+            display: block;
+            border-top: $dashSize solid $white1;
+          }
+        }
+      }
+    }
+    .title {
+      border-left: 1px solid $white1;
+      padding-left: $padSize;
+      @extend .secondFont;
+      font-size: $px60;
+    }
+  }
+}

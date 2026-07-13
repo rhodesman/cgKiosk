@@ -1,0 +1,111 @@
+#traffic {
+  overflow: hidden;
+
+  h2 {
+    font-size: $pt72;
+    text-align: right;
+  }
+  .list {
+    padding: 0 $px24;
+    //max-height: 36.25rem;
+    height: 90%;
+    overflow: auto;
+    scrollbar-width: none;
+    border-radius:$px16;
+    ul {
+      list-style: none;
+      padding: $px24 0;
+      margin:  0;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+
+  /****.traffic-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 1.5rem;
+    overflow: auto;
+    scrollbar-width: none;
+    z-index:2;
+    max-height: 36.25rem;
+    ****/
+
+    //box-shadow:inset 0 -12px 20px -10px rgba(0,0,0,.2);
+      li {
+        width: 40%;
+        min-width:27rem;
+        margin-bottom: $domMargin;
+        padding: 0 $domMargin;
+        display: block;
+          border-radius: 15px;
+          background-color: rgba($white,0.15);
+          padding: $px28 $px38;
+          font-size: $pt48;
+          color: $white1;
+          //min-width:50%;
+          text-align: left;
+          @extend .boxShadow;
+          i {
+            @extend .fal;
+            margin-right: $px38;
+          }
+          span {
+            display: inline-block;
+            width: 70%;
+          }
+
+        &.type- {
+          &0 i {
+            @extend .fa-shipping-fast;
+          }
+
+          &1 i {
+            @extend .fa-construction;
+          }
+          &2 i {
+            @extend .fa-traffic-cone;
+          }
+          &3 i {
+            @extend .fa-cars;
+          }
+          &4 i {
+            @extend .fa-car-crash;
+          }
+        }
+        &.severity- {
+          &0 i{
+            color: $green1;
+          }
+          &1 i {
+            color: $white1;
+          }
+          &2 i {
+            color: $orange1;
+          }
+          &3 i {
+            color: $red1;
+          }
+          &4 i {
+            color: $red1;
+            animation: flashing 2s linear infinite;
+          }
+
+        }
+        //type-4 severity-2 tally-1
+        &.information i {
+          @extend .far;
+          @extend .fa-exclamation-triangle;
+          color: $red1;
+        }
+
+      }
+    }
+  }
+}
