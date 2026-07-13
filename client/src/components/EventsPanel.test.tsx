@@ -19,4 +19,20 @@ describe("EventsPanel", () => {
     await userEvent.click(screen.getByText("Demo Night").closest("li")!);
     expect(onSelect).toHaveBeenCalledWith(event);
   });
+
+  it("requests today's space bookings for today's events", async () => {
+    const today = new Date();
+    const iso = today.toISOString();
+    const calls: string[] = [];
+    vi.stubGlobal("fetch", vi.fn((url: string) => {
+      calls.push(url);
+      if (url.includes("/api/events"))
+        return Promise.resolve({ ok: true, json: async () => ({ CalendarEvents: [{ Id: 1, Name: "Today Event", StartDate: iso, EndDate: iso, LongDescription: null, VenueAddress: null }] }) });
+      return Promise.resolve({ ok: true, json: async () => [] });
+    }));
+    const { EventsPanel } = await import("./EventsPanel");
+    const { render, waitFor } = await import("@testing-library/react");
+    render(<EventsPanel onSelectEvent={() => {}} onRoomsForToday={() => {}} />);
+    await waitFor(() => expect(calls.some((c) => c.includes("/api/space/"))).toBe(true));
+  });
 });

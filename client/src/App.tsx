@@ -32,7 +32,7 @@ export function App() {
         <TrafficPanel onSelectIncident={onSelectIncident} />
       </header>
       <div className="row main-body">
-        <EventsPanel onSelectEvent={onSelectEvent} />
+        <EventsPanel onSelectEvent={onSelectEvent} onRoomsForToday={(selectors) => setHighlighted(selectors)} />
         <FloorMap highlighted={highlighted} />
         <DirectoryPanel onSelectSuite={highlightSuite} />
       </div>
