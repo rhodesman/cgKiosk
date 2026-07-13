@@ -9,8 +9,8 @@ describe("app", () => {
     expect(res.body).toEqual({ status: "ok" });
   });
 
-  it("returns JSON 404 for unknown routes", async () => {
-    const res = await request(createApp()).get("/nope");
+  it("returns JSON 404 for unknown /api routes", async () => {
+    const res = await request(createApp()).get("/api/nope");
     expect(res.status).toBe(404);
     expect(res.body).toHaveProperty("error");
   });
