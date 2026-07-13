@@ -1,30 +1,22 @@
 {
   "name": "citygaragekiosk",
-  "version": "1.0.0",
-  "description": "Interactive Kiosk for City Garage ",
-  "main": "app.js",
+  "version": "2.0.0",
+  "description": "Interactive Kiosk for City Garage",
+  "private": true,
+  "workspaces": ["client", "server"],
   "scripts": {
-    "start": "nodemon app.js",
-    "serve": "browser-refresh app.js",
-    "test": "node --inspect app.js"
-  },
-  "author": "Jason Rhodes (WebbMason)",
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "express": "^4.17.1",
-    "express-http-proxy": "^1.6.0",
-    "http-proxy": "^1.18.0",
-    "jquery": "^3.4.1",
-    "morgan": "^1.9.1",
-    "mysql": "^2.17.1",
-    "node-libcurl": "^3.0.0",
-    "nodemon": "^3.0.3",
-    "popper.js": "^1.16.0",
-    "reload": "^3.0.3",
-    "unirest": "^0.6.0"
+    "dev": "concurrently -n server,client -c blue,green \"npm:dev -w server\" \"npm:dev -w client\"",
+    "build": "npm run build -w client && npm run build -w server",
+    "start": "node server/dist/index.js",
+    "test": "npm run test -w client && npm run test -w server",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx,scss,json,md}\""
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "concurrently": "^9.1.0",
+    "eslint": "^9.15.0",
+    "typescript-eslint": "^8.15.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "prettier": "^3.4.0"
   }
 }
