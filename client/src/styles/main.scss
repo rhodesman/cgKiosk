@@ -1,0 +1,101 @@
+// ALL @use rules MUST come first (Sass module system)
+// Project inc modules
+@use "inc/globals" as *;
+@use "inc/colors" as *;
+@use "inc/fonts" as *;
+@use "inc/fa-stubs" as *;
+
+// Section partials
+@use "parts/welcome";
+@use "parts/weather";
+@use "parts/traffic";
+@use "parts/events";
+@use "parts/map";
+@use "parts/dir";
+@use "parts/modal";
+
+// Bootstrap 4 grid (legacy @import; "Deprecation [legacy-js-api]" warnings are expected)
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/grid";
+
+/*********************
+Global styles
+*********************/
+
+.toAnimate {
+  transition: all 0.5s ease-in-out;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  background-color: $black1;
+  background: radial-gradient(circle, rgba($black2,1) 0%, rgba($black1,1) 100%);
+  font-size:1rem;
+}
+
+body {
+  > .container-fluid {
+    padding:$mainPadding;
+    height:100vh;
+  }
+}
+a,h1,h2,h3,h4,h5,h6,p,div {
+  user-select: none;
+  font-family: sans-serif;
+}
+header {
+  align-items:flex-start;
+  height:33%;
+}
+.row {
+  section {
+    border-radius:$px16;
+    overflow: hidden;
+    height:100%;
+  }
+}
+.main-body {
+  padding-top: $px130;
+  height:66%;
+  h2 {
+    position: relative;
+    font-size: $px90;
+    padding-left: $px130 * 1.5;
+    min-height: $px130;
+    padding-top: $px16;
+    &:before {
+      content:'';
+      @extend %fal;
+      font-size: $px130;
+      position: absolute;
+      left: $px90 * 0.5;
+      top:50%;
+      transform: translateY(-50%);
+    }
+  }
+  .list {
+    padding: 0 $px56;
+    height:90%;
+    overflow: auto;
+    scrollbar-width: none;
+    border-radius:$px16;
+    ul {
+      list-style: none;
+      padding: $px48 0;
+      margin:  0;
+      li {
+        border-radius: $px15;
+        background-color: rgba($white1,0.25);
+        padding: $px35;
+        @extend %boxShadow;
+        div {
+          display: inline-block;
+          color: $white1;
+        }
+      }
+    }
+  }
+}
