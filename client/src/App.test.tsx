@@ -29,7 +29,9 @@ describe("App", () => {
   it("highlights the map when a directory suite is clicked", async () => {
     stubAllEndpoints();
     const { container } = render(<App />);
-    await userEvent.click(screen.getByAltText("Lighthouse").closest("li")!);
-    await waitFor(() => expect(container.querySelector(".suite.s-100")).toHaveClass("show"));
+    // Suite 700 (Ready Robotics) is a directory occupant that exists on the floor map.
+    // (Suite 100 / Lighthouse is not on the legacy floor plan, so it can't be highlighted.)
+    await userEvent.click(screen.getByAltText("Ready Robotics").closest("li")!);
+    await waitFor(() => expect(container.querySelector(".suite.s-700")).toHaveClass("show"));
   });
 });
