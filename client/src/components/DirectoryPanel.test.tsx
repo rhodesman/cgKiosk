@@ -11,7 +11,7 @@ describe("DirectoryPanel", () => {
   it("emits the suite id on click", async () => {
     const onSelect = vi.fn();
     render(<DirectoryPanel onSelectSuite={onSelect} />);
-    await userEvent.click(screen.getByText("Lighthouse").closest("li")!);
+    await userEvent.click(screen.getByAltText("Lighthouse").closest("li")!);
     expect(onSelect).toHaveBeenCalledWith("100");
   });
 });

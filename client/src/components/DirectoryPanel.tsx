@@ -8,7 +8,6 @@ function Logo({ b }: { b: Business }) {
       <div className="logo">
         <img src={`/img/logos/${b.logo1}`} alt={b.company} />
         {b.logo2 && <img src={`/img/logos/${b.logo2}`} alt={b.company2} />}
-        {b.company && <span className="label">{b.company}</span>}
       </div>
     );
   }
