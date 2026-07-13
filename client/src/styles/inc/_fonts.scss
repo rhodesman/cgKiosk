@@ -1,11 +1,10 @@
 @use "colors" as *;
 @use "globals" as *;
 
-// FontAwesome Pro 5.10.1 SCSS is NOT in the repo (only LICENSE committed).
-// Those @import lines are removed. FA icon rendering depends on webfonts in
-// client/public/webfonts/ + a follow-up task to add @fortawesome npm package
-// or equivalent CSS. The @extend %fa-* stubs (see _fa-stubs.scss) keep the
-// build compiling with empty icon rules.
+// FontAwesome Pro 5.10.1 SCSS is NOT in the repo (only LICENSE committed), so
+// the original vendored @import lines were dropped. FA icons render from the
+// committed webfonts in client/public/webfonts/ via the @font-face + glyph
+// codepoints defined in inc/_fa-icons.scss (which the partials @extend).
 
 //@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,600,700|Raleway:400,500,600,700&display=swap');
